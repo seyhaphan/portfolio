@@ -7,29 +7,6 @@ export default function Home() {
 
   const fullText = "Full-Stack Java Developer"
 
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date()
-      setCurrentTime(now.toLocaleString())
-    }
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
-    return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    let index = 0
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypewriterText(fullText.slice(0, index))
-        index++
-      } else {
-        clearInterval(timer)
-      }
-    }, 100)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <div className="min-h-screen bg-gray-900 text-green-400">
       {/* Hero Section */}
